@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>MJ Restaurant: About Us</title>
+ 
+<style>
+$lt-gray: #ddd;
+$background-dark: #512DA8;
+$background-light: #9575CD;
+$background-pale: #D1C4E9;
+
+// Height variables
+$carousel-item-height: 300px;
+@mixin zero-margin($pad-up-dn, $pad-left-right) {
+	margin:0px auto;
+	padding: $pad-up-dn $pad-left-right;
+}
+
+.row-header{
+    @include zero-margin(0px,0px);
+}
+
+.row-content {
+    @include zero-margin(50px,0px);
+    border-bottom: 1px ridge;
+    min-height:400px;
+}
+
+.footer{
+    background-color: $background-pale;
+    @include zero-margin(20px, 0px);
+}
+
+.jumbotron {
+    @include zero-margin(70px,30px);
+    background: $background-light ;
+    color:floralwhite;
+}
+
+address{
+    font-size:80%;
+    margin:0px;
+    color:#0f0f0f;
+}
+
+body{
+    padding:50px 0px 0px 0px;
+    z-index:0;
+}
+
+.navbar-dark {
+     background-color: $background-dark;
+}
+
+.tab-content {
+    border-left: 1px solid $lt-gray;
+    border-right: 1px solid $lt-gray;
+    border-bottom: 1px solid $lt-gray;
+    padding: 10px;
+}
+.carousel {
+    background:$background-dark;
+
+    .carousel-item {
+        height: $carousel-item-height;
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            min-height: 300px;
+        }
+    }
+}
+
+#carouselButton {
+    right:0px;
+    position: absolute;
+    bottom: 0px;
+    z-index: 1;
+}
+
+</style>
+</head>
+<body>
+
+<script type="text/javascript">
+function validateForm() {
+if (isEmpty(document.getElementById('data_3').value.trim())) {
+alert('Name is required!');
+return false;
+}
+if (!validateEmail(document.getElementById('data_5').value.trim())) {
+alert('Email must be a valid email address!');
+return false;
+}
+if (isEmpty(document.getElementById('data_6').value.trim())) {
+alert('Date is required!');
+return false;
+}
+if (isEmpty(document.getElementById('data_7').value.trim())) {
+alert('Time is required!');
+return false;
+}
+return true;
+}
+function isEmpty(str) { return (str.length === 0 || !str.trim()); }
+function validateEmail(email) {
+var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,15}(?:\.[a-z]{2})?)$/i;
+return isEmpty(email) || re.test(email);
+}
+</script>
+ 
+<nav class="navbar navbar-dark navbar-expand-sm bg-primary fixed-top">
+        <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                      <a class="nav-link active" href="#peter"
+                        role="tab" data-toggle="tab">MJ, CEO</a>
+                    </li>
+                  
+                </ul>           
+        </div>
+    </nav>
+
+
+
+
+<span class="navbar-text">
+                    <a data-toggle="modal" data-target="#loginModal">
+                    <span class="fa fa-sign-in"></span> Login</a>
+                </span>
+
+
+    <div id="loginModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="content">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Login </h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-sm-4">
+                                    <label class="sr-only" for="exampleInputEmail3">Email address</label>
+                                    <input type="email" class="form-control form-control-sm mr-1" id="exampleInputEmail3" placeholder="Enter email">
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <label class="sr-only" for="exampleInputPassword3">Password</label>
+                                <input type="password" class="form-control form-control-sm mr-1" id="exampleInputPassword3" placeholder="Password">
+                            </div>
+                            <div class="col-sm-auto">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox">
+                                    <label class="form-check-label"> Remember me
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>        
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+<script>
+$(document).ready(function(){
+  $("#myBtn").click(function(){
+    $("#myModal").modal();
+  });
+});
+</script>
+
+
+
+
+
+
+
+
+
+  
+<header class="jumbotron">
+<div class="container">
+<div class="row row-header">
+<div class="col-12 col-sm-6">
+<h1>MJ Restaurant</h1>
+<p>Thats my second assignment, I try to do my best .lets go !</p>
+</div>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Reserve Table</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Fill Detaile For Table Reservation</h4>
+        </div>
+        <div class="modal-body">
+         <form method="post" action="//submit.form" onSubmit="return validateForm();">
+<div style="max-width: 400px;">
+</div>
+<div class="card-columns">
+  <div class="card bg-primary">
+<div style="padding-bottom: 18px;font-size : 24px;">Table Reservation</div>
+<div style="padding-bottom: 18px;font-size : 18px;">We would be glad to reserve a table for you at our restaurant!</div>
+<div style="padding-bottom: 18px;">Name<span style="color: red;"> *</span><br/>
+<input type="text" id="data_3" name="data_3" style="max-width : 400px;" class="form-control"/>
+</div>
+<div style="padding-bottom: 18px;">Phone<br/>
+<input type="text" id="data_4" name="data_4" style="max-width : 400px;" class="form-control"/>
+</div>
+<div style="padding-bottom: 18px;">Email<br/>
+<input type="text" id="data_5" name="data_5" style="max-width : 400px;" class="form-control"/>
+</div>
+<div style="padding-bottom: 18px;">Date<span style="color: red;"> *</span><br/>
+<input type="text" id="data_6" name="data_6" style="max-width : 250px;" class="form-control"/>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.4.0/pikaday.min.js" type="text/javascript"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.4.0/css/pikaday.min.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">new Pikaday({ field: document.getElementById('data_6') });</script>
+<div style="padding-bottom: 18px;">Time<span style="color: red;"> *</span><br/>
+<input type="text" id="data_7" name="data_7" style="max-width : 250px;" class="form-control"/>
+</div>
+<div class="container">
+  <h2>Reservation table</h2>
+  <p>Chooose how many attendees are come:</p>
+  <form>
+    <div class="radio">
+      <label><input type="radio" name="optradio" checked>1</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="optradio"> 2</label>
+    </div>
+<div class="radio">
+      <label><input type="radio" name="optradio">3 </label>
+    </div>
+<div class="radio">
+      <label><input type="radio" name="optradio">4</label>
+    </div>
+ <div class="radio">
+      <label><input type="radio" name="optradio"> 5</label>
+    </div>
+<div class="radio">
+      <label><input type="radio" name="optradio">6 </label>
+    </div>
+<div class="radio">
+      <label><input type="radio" name="optradio">7</label>
+    </div>
+    <div class="radio disabled">
+      <label><input type="radio" name="optradio" disabled>disabled</label>
+    </div>
+
+<p> Section
+<button type="button" class="btn btn-warning">Non smoking</button>
+<button type="button" class="btn btn-danger">Smoking</button>
+
+
+<div style="padding-bottom: 18px;">Comments / Additional Requests<br/>
+
+<textarea id="data_9" false name="data_9" style="max-width : 400px;" rows="6" class="form-control"></textarea>
+</div>
+
+
+ <div style="padding-bottom: 18px;"><input name="skip_Submit" value="Cancel" type="submit"
+<div style="padding-bottom: 18px;"><input name="skip_Submit" value="reserve a table" type="submit"/></div>
+
+
+      
+    </div>
+  </div>
+  
+</div>
+
+</div>
+</div>
+</div>
+</form>
+        </div>
+        
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+
+<h3>About Us</h3>
+<hr>
+</div>
+</div>
+<div>
+<h2>Our History</h2>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+<div class="card-columns">
+  <div class="card bg-primary">
+<div class="container-fluid">
+  <p>History distribution 25%75%.</p>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-3 bg-success">
+        Best restaurant in the world 
+<p>I am MJ (owner of MJ Restaurant ) so lets begin \.</p>
+      </div>
+ </div>
+</div>
+      <div class="col-9 bg-warning">
+       </div>
+ </div>
+ </div>
+      </div>
+
+<div>
+ <div class="media">
+ <h2 class="mt-0">Bheem
+<span class="badge badge-danger">HOT</span>
+<p class="d-none d-sm-block">Gain several award for  the best shef in the world for making of  delicious INDIAN   cuisine. we provide best services in the world .our restaurant rank 1  in asia 2019 competition </p> </h2>
+ <div class="media-body">
+                       
+                       
+        
+</div>
+                    <img class="d-flex mr-3 img-thumbnail align-self-center"
+                            src="C:\Users\Mohit Joshi\Desktop\index\rest.png" alt="Rest" height ="250" width ="250">
+                    
+                    </div>
+
+
+
+
+<h2 class="card-title">MJ Restaurant</h2>
+ <div class="media">
+                    <img class="d-flex mr-3 img-thumbnail align-self-center"
+                            src="C:\Users\Mohit Joshi\Desktop\index\bheem.png" alt="Bheem">
+                    <div class="media-body">
+                        <h2 class="mt-0">Bheem</h2>
+                        <h4>Executive Chef</h4>
+                        <p class="d-none d-sm-block">No 1 shef in Dholakpur .He is famous for his Ladoo. He daily eat 200 Ladoo .Award winning Chef for making Ladoo .
+                            </p>
+                    </div>
+                </div>
+<div class="col-7 col-sm-5">
+<h5>Our Address</h5>
+<address>
+OM Shanti om<br>
+haripur  nayak, jamshed<br>
+India<br>
+Tel.: +4238958245342<br>
+Fax: +84828492245<br>
+Email: <a href="myemail2021@gmail.com">myemail2021@gmail.com</a>
+</address>
+</div>
+<div class="col-12 col-sm-4 align-self-center">
+<div class="text-center">
+<a href="http://google.com/+">Google+</a>
+<a href="http://www.facebook.com/profile.php?id=">Facebook</a>
+<a href="http://www.linkedin.com/in/">LinkedIn</a>
+<a href="http://twitter.com/">Twitter</a>
+<a href="http://youtube.com/">YouTube</a>
+<a href="mailto:">Mail</a>
+</div>
+</footer>
+</body>
+</html>
